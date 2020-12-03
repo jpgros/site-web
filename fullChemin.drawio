@@ -1,1 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2020-12-03T12:00:53.707Z" agent="5.0 (X11)" version="13.10.4" etag="l2Th45Db_s7HAGnm1uvu" type="github"><diagram id="eevqqW3QFM5ZMHWBqgR6">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-03T12:03:01.484Z" agent="5.0 (X11)" etag="sF2hgO6NyiivFMtIL3BR" version="13.10.4" type="github">
+  <diagram id="eevqqW3QFM5ZMHWBqgR6" name="Page-1">
+    <mxGraphModel dx="1422" dy="831" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dcNJ7K8i5J5AxgTR9yFN-1" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;δ;V1.enter(R);δ;V1.join(V2);&lt;/b&gt;V2.acceptJoin(V1)&lt;b&gt;;δ;...;δ;V1.forceQuit(P)&lt;/b&gt;;P.acceptQuit(V1)&lt;b&gt;;&lt;br&gt;δ&lt;/b&gt;;...;&lt;b&gt;V1.join(V2)&lt;/b&gt;;V2.acceptJoin(V1);&lt;b&gt;δ&lt;/b&gt;;...;acceptQuit(V1)&lt;b&gt;;δ;V1.join(V3);δ;δ&lt;/b&gt;&lt;/font&gt;;V1.leave(R)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="25" y="10" width="650" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
