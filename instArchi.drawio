@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-10T21:43:44.186Z" agent="5.0 (X11)" etag="-TmseDBfTxzLSCpBRy_c" version="14.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-10T21:50:40.131Z" agent="5.0 (X11)" etag="AgSs266gz5wwMmeh_stu" version="14.3.0" type="github">
   <diagram id="OQl73W1y5MthcE245THd" name="Page-1">
     <mxGraphModel dx="1125" dy="670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -269,7 +269,7 @@
           <mxGeometry x="508.25" y="160" width="50" height="20" as="geometry" />
         </mxCell>
         <mxCell id="_g5wlI9feMP86QzPln-b-72" value="v6 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" parent="1" vertex="1">
-          <mxGeometry x="508.25" y="130" width="95" height="100" as="geometry" />
+          <mxGeometry x="508.25" y="130" width="81.75" height="80" as="geometry" />
         </mxCell>
         <mxCell id="_g5wlI9feMP86QzPln-b-73" value="connV" style="html=1;" parent="1" vertex="1">
           <mxGeometry x="508.25" y="180" width="35" height="20" as="geometry" />
