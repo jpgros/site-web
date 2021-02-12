@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-12T14:23:14.673Z" agent="5.0 (X11)" etag="6Mt-6SC1JtVwZ4bwJUIF" version="14.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-12T14:26:48.004Z" agent="5.0 (X11)" etag="EnLCfZus8BBaAtI0x_tl" version="14.3.1" type="github">
   <diagram id="c0WlFFYmnXxaKZzAeMTF" name="Page-1">
     <mxGraphModel dx="1355" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -27,6 +27,15 @@
         </mxCell>
         <mxCell id="BpQJaqF968-kyVBsxe2n-17" value="C" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="70" y="320" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BpQJaqF968-kyVBsxe2n-18" value="Event : δ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="32.049999999999955" y="120" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BpQJaqF968-kyVBsxe2n-19" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Event :v3.forceQuit(p)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="124.1" y="200" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BpQJaqF968-kyVBsxe2n-20" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Event :v2.join(v3)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="270" width="120" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
