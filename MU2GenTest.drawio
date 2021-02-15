@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-15T11:04:38.503Z" agent="5.0 (X11)" etag="mxpMpKlOwjSv3CToS43I" version="14.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-15T11:19:11.817Z" agent="5.0 (X11)" etag="WOb8F3HFHuD1GDcaKijc" version="14.3.1" type="github">
   <diagram id="c0WlFFYmnXxaKZzAeMTF" name="Page-1">
     <mxGraphModel dx="1355" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -88,11 +88,11 @@
             <mxPoint x="402.05" y="550" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BpQJaqF968-kyVBsxe2n-52" value="&lt;font style=&quot;font-size: 14px&quot;&gt;pick() : v1&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="307.05" y="522.5" width="80" height="20" as="geometry" />
+        <mxCell id="BpQJaqF968-kyVBsxe2n-52" value="&lt;font style=&quot;font-size: 14px&quot;&gt;pick() : &lt;/font&gt;&lt;font style=&quot;font-size: 14px&quot;&gt;δ&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="570" y="523.25" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="BpQJaqF968-kyVBsxe2n-53" value="1" style="ellipse;fillColor=#ffffff;strokeColor=#000000;fontSize=18;" parent="1" vertex="1">
-          <mxGeometry x="272.05" y="522.5" width="20" height="25" as="geometry" />
+          <mxGeometry x="248.5" y="520.75" width="20" height="25" as="geometry" />
         </mxCell>
         <mxCell id="BpQJaqF968-kyVBsxe2n-54" value="" style="endArrow=open;endFill=1;endSize=12;html=1;strokeWidth=3;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -148,9 +148,6 @@
         </mxCell>
         <mxCell id="BpQJaqF968-kyVBsxe2n-67" value="4" style="ellipse;fillColor=#ffffff;strokeColor=#000000;fontSize=18;" parent="1" vertex="1">
           <mxGeometry x="650" y="347.5" width="20" height="25" as="geometry" />
-        </mxCell>
-        <mxCell id="BpQJaqF968-kyVBsxe2n-69" value="send : δ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="569.9999999999999" y="523.25" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="BpQJaqF968-kyVBsxe2n-70" value="" style="endArrow=open;endFill=1;endSize=12;html=1;strokeWidth=3;exitX=0;exitY=1;exitDx=0;exitDy=-15;exitPerimeter=0;" parent="1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -239,6 +236,9 @@
         </mxCell>
         <mxCell id="0yc9BrEZYy1KqK9iRJSg-3" value="Le modèle d&#39;usage du véhicule qui permet de comprendre pourquoi p.scatter() est propagé aux véhicules" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="280" y="1110" width="570" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0yc9BrEZYy1KqK9iRJSg-4" value="selectComponent() : v1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="268.5" y="522.5" width="140" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
