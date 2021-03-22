@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-22T13:18:24.711Z" agent="5.0 (X11)" etag="wTtiJfckJrY5c6hPTe0d" version="14.4.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-22T13:35:56.852Z" agent="5.0 (X11)" etag="MgmaRFsQ3furEGqJx9m3" version="14.4.9" type="github">
   <diagram id="iJsx7foQYJBDxfvTk9jG" name="Page-1">
     <mxGraphModel dx="1355" dy="1973" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -269,27 +269,16 @@
         <mxCell id="ivbXQMKR3xz6gGFe4MmB-5" value="&lt;div style=&quot;font-size: 15px&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Components = {v1,v2,...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Parents= {...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Required={next,...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Provided={connV,...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px&quot; align=&quot;left&quot;&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;......&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="579.06" y="-40" width="180" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="bGvqWACWf-lIKPqjdWD8-5" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Traces&lt;/font&gt;&lt;/b&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="985" y="900" width="60" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="bGvqWACWf-lIKPqjdWD8-6" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px&quot;&gt;Self-Adaptive System&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
           <mxGeometry x="727.12" y="870" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="bGvqWACWf-lIKPqjdWD8-8" value="" style="endArrow=classic;html=1;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.02;exitY=0.645;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="bGvqWACWf-lIKPqjdWD8-6" target="bGvqWACWf-lIKPqjdWD8-5">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="687.12" y="920" as="sourcePoint" />
-            <mxPoint x="737.12" y="870" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="bGvqWACWf-lIKPqjdWD8-9" value="&lt;font style=&quot;font-size: 15px&quot;&gt;(3) Execution&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
-          <mxGeometry x="885" y="915" width="100" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="bGvqWACWf-lIKPqjdWD8-12" value="" style="endArrow=classic;endFill=1;endSize=6;html=1;strokeWidth=3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.968;entryY=0.891;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bGvqWACWf-lIKPqjdWD8-5" target="bGvqWACWf-lIKPqjdWD8-1">
+        <mxCell id="bGvqWACWf-lIKPqjdWD8-12" value="" style="endArrow=classic;endFill=1;endSize=6;html=1;strokeWidth=3;entryX=0.968;entryY=0.891;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="bGvqWACWf-lIKPqjdWD8-1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="781.12" y="1305" as="sourcePoint" />
+            <mxPoint x="890" y="940" as="sourcePoint" />
             <mxPoint x="491.12" y="1045" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1015" y="1010" />
+              <mxPoint x="1090" y="940" />
+              <mxPoint x="1090" y="1008" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -335,8 +324,8 @@
             <mxPoint x="429.35" y="960" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="bGvqWACWf-lIKPqjdWD8-37" value="&lt;font style=&quot;font-size: 15px&quot;&gt;(4) Retrieve observable event&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
-          <mxGeometry x="644.53" y="1010" width="210" height="20" as="geometry" />
+        <mxCell id="bGvqWACWf-lIKPqjdWD8-37" value="&lt;font style=&quot;font-size: 15px&quot;&gt;(3) Execution: observable events&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="887.12" y="905" width="230" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
