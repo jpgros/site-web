@@ -1,0 +1,780 @@
+import static java.util.UUID.randomUUID;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.UUID;
+import org.apache.commons.math3.distribution.BetaDistribution;
+import umontreal.iro.lecuyer.probdist.BetaDist;
+
+public class MainManager {
+
+	static class Variables{
+		ArrayList<Integer> nbVl;
+		ArrayList<Integer> nbPl;
+		ArrayList<Integer> nbVlinPl;
+	    ArrayList<UUID>[] iD;
+		//ArrayList<ArrayList<UUID>> iD;
+	    ArrayList<ArrayList<UUID>> iDPl;
+	    //ArrayList<Double> speed = new ArrayList<Double>();
+	    //ArrayList<Double> position = new ArrayList<Double>();
+	    ArrayList<ArrayList<Double>> battery;
+	    ArrayList<ArrayList<Double>> decBattery;
+	    ArrayList<ArrayList<Double>> distance;
+	    
+	    
+	    Variables(int nbFiles){
+	    	nbVl= new ArrayList<Integer>(nbFiles);
+	    	nbPl= new ArrayList<Integer>(nbFiles);
+	    	nbVlinPl= new ArrayList<Integer>(nbFiles);
+	    	
+	    	iD = new ArrayList[nbFiles];
+	    	iDPl = new ArrayList<ArrayList<UUID>>(nbFiles);
+	    	battery = new ArrayList<ArrayList<Double>>(nbFiles);
+	 	    decBattery = new ArrayList<ArrayList<Double>>(nbFiles);
+	 	    distance = new ArrayList<ArrayList<Double>>(nbFiles);
+	    }
+	}
+	public static void main(String[] args) throws IOException {
+		int nbFiles =9;
+	    Variables variables = new Variables(nbFiles);
+	    System.out.println("size list" + variables.battery.size());
+	    System.out.println("iD list" + variables.iD.length);
+	    variables.iD[0]= new ArrayList<UUID>();
+//		PrintWriter out = new PrintWriter("./input.dat", "UTF-8"); 
+//        FileReader fr = new FileReader("./log2018-09-13 12-45-57.txt");
+//        BufferedReader br = new BufferedReader(fr);
+//        int time =0;
+//		String sCurrentLine;
+//		boolean firstLine = true;
+//		out.println("x_0	f(x_1)");
+//		while ((sCurrentLine = br.readLine()) != null) {
+//			if(sCurrentLine.charAt(0)!='E') {
+//				if(firstLine) {
+//					String[] splits = sCurrentLine.split(";");
+//					out.println(time + "    " + splits[0]);
+//					firstLine=false;
+//					time+=10;
+//				}
+//			}
+//			else firstLine=true;
+//		}
+		//distancePlot();
+		//NumberVehiclesPlot();
+		//autonomyPlot();
+		//statusVehicle();
+		//nextStationPlot();
+		//vehiclePlot();
+		exempleThese();
+		
+		double nbVlMax = 250.0;
+		double nbPlMax = 25.0;
+		double nbVlPlMax= 8.0;
+		int nbStas =1000;
+		double minBat =40.0;
+		double minDist=10000;
+		double maxBat=40.0+minBat;
+		double maxDist=15000.0+minDist;
+		//tryBetaDist();
+		BetaDistribution beta = new BetaDistribution(1.0, 1.0); //1.0 1.0 for rand  2.0 0.5 for max only 0.5 0.5 for ext and 0.5 2.0 for min only
+		//indexCreationICTSS(12, 2, 100, 99, 10000, 40, 50, beta);
+		//indexCreation(nbVlMax,nbPlMax,nbVlPlMax,nbStas,maxBat,maxDist,minBat,minDist,beta);
+		deltaFiles(variables, 9);
+		//xmlPlot();
+//		averageConso();
+		System.out.println("finished");
+	}
+	public static void xmlPlot() {
+		
+	}
+	public static void tryBetaDist() {
+		double x;
+		double b;
+		//BetaDist bd = new BetaDist(2.0, 0.5,0, 100);// alpha and beta =0.5 to have greate chances in borders or range
+		BetaDistribution beta = new BetaDistribution(2.0, 0.5);
+		for (int i = 0; i < 100; i++) {
+            x = Math.random();
+            b = beta.inverseCumulativeProbability(x);
+            System.out.println(b);
+        }
+		
+	}
+	public static void averageConso() throws IOException  {
+		 FileReader fr = new FileReader("./conso.txt");
+	        BufferedReader br = new BufferedReader(fr);
+	        int i=0;
+	        String sCurrentLine;
+	        int j=0;
+	        double cpt=0.0;
+	        String[] splitLines;
+	        double[][] arrayConso = new double[5][8];
+	        while ((sCurrentLine = br.readLine()) != null) {
+//	        	if(sCurrentLine.equals("\n")) {
+//	        		i=0; j=0;cpt++;
+//	        	}
+//	        	else {
+	        		System.out.println("line " + sCurrentLine);
+	        		splitLines = sCurrentLine.split(";");
+	        		System.out.println("splits length " + splitLines.length);
+	        		for(int k=1;k<splitLines.length;k++) {
+	        			System.out.println("ah " + splitLines[k]);
+	        			arrayConso[i][j] += Double.parseDouble(splitLines[k]);
+	        			j++; 
+	        		}
+	        		j=0;
+	        		i++;
+	        		if(splitLines.length==1) {
+	        			i=0;cpt++;
+	        		}
+	        	//}
+	        }cpt=31;
+	        System.out.println("cpt "+ cpt );
+	        double val=0;
+	        System.out.println("toto");
+	        for(int ii= 0; ii<5;ii++) {
+	        	for(int jj=0; jj<8; jj++) {
+	        		arrayConso[ii][jj]/=cpt;
+	        		val= arrayConso[ii][jj];
+	        		System.out.printf ("%.1f;", val);
+	        	}
+	        	System.out.println("");
+	        }
+			double[] arrayCompressed = new double[8];
+			Arrays.fill(arrayCompressed, 0.0);
+	        for(int ii= 0; ii<5;ii++) {
+	        	for(int jj=0; jj<8; jj++) {
+	        		arrayCompressed[jj]+= arrayConso[ii][jj];
+	        		//System.out.println("array  " + arrayCompressed[jj] + "val "+ arrayConso[ii][jj]+ " i "+ ii+ " j " + jj);
+	        	}
+        	}
+	        System.out.println("------");
+	        for(int jj=0; jj<8; jj++) {
+	        	val = arrayCompressed[jj]/5.0;
+        		System.out.printf ("%.1f;", val);
+	        }
+	}
+	public static void exempleThese() throws FileNotFoundException, UnsupportedEncodingException {
+		PrintWriter out = new PrintWriter("./exempleBat.txt", "UTF-8");
+		double x=0;
+		double minBat=35.0;
+		double maxBat=100.0;
+		BetaDistribution beta = new BetaDistribution(0.5, 2); //0.5 0.5 for min max and 0.5 2.0 for min only ,1 1 for average
+		for(int i=0; i<1000;i++) {
+			x = Math.random();
+			out.print((int) (beta.inverseCumulativeProbability(x) * maxBat) + minBat); // need a level of 40 to accept join at init
+			out.print(", ");
+		}
+		out.print("\n");
+		BetaDistribution beta2 = new BetaDistribution(0.5, 0.5); //0.5 0.5 for min max and 0.5 2.0 for min only , 1, 1 for average
+		for(int i=0; i<1000;i++) {
+			x = Math.random();
+			out.print((int) (beta2.inverseCumulativeProbability(x) * maxBat) + minBat); // need a level of 40 to accept join at init
+			out.print(", ");
+		}
+		out.print("\n");
+		
+		BetaDistribution beta3 = new BetaDistribution(1.0, 1.0); //0.5 0.5 for min max and 0.5 2.0 for min only , 1, 1 for average
+		for(int i=0; i<1000;i++) {
+			x = Math.random();
+			out.print((int) (beta3.inverseCumulativeProbability(x) * maxBat) + minBat); // need a level of 40 to accept join at init
+			out.print(", ");
+		}
+		out.print("\n");
+	}
+	public static void fillArrays(Variables variables, int nbFiles) throws IOException {
+		for(int i=0; i<nbFiles; i++) {
+			FileReader vehicleReader = new FileReader("/home/jpgros/git/CycabJava/Vanet/FileManaging/ictss/ICTSSValmaxbeta"+i+".txt");
+			BufferedReader br = new BufferedReader(vehicleReader);
+			String sCurrentLine;
+			sCurrentLine = br.readLine();
+			int nbVl =Integer.parseInt(sCurrentLine);
+			sCurrentLine = br.readLine();
+			int nbPl=Integer.parseInt(sCurrentLine);
+			sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("Id")) {
+				sCurrentLine = br.readLine();
+			}sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("Battery")) {
+				try {
+					variables.iD[i].add(UUID.fromString(sCurrentLine));
+				}catch (java.lang.IllegalArgumentException e){
+					System.out.println("false iuud "+sCurrentLine);
+				}
+				sCurrentLine = br.readLine();
+			}
+			sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("DecAuto")) {
+				variables.battery.get(i).add(Double.parseDouble(sCurrentLine));
+				sCurrentLine = br.readLine();
+			}
+			sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("Distance")) {
+				variables.decBattery.get(i).add(Double.parseDouble(sCurrentLine));
+				sCurrentLine = br.readLine();
+			}
+			sCurrentLine = br.readLine();
+			while (!sCurrentLine.contains("IdPl")){
+				variables.distance.get(i).add(Double.parseDouble(sCurrentLine));
+				sCurrentLine = br.readLine();
+			}
+			sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("Position")){
+				variables.iDPl.get(i).add(UUID.fromString(sCurrentLine));
+				sCurrentLine = br.readLine();
+			}
+			sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("Speed")){
+				//position.add(Double.parseDouble(sCurrentLine));
+				sCurrentLine = br.readLine();
+			}
+			sCurrentLine = br.readLine();
+			while(!sCurrentLine.contains("StationPositions")){
+				//speed.add(Double.parseDouble(sCurrentLine));
+				sCurrentLine = br.readLine();
+			}
+			if(nbPl>0) {
+				sCurrentLine = br.readLine();
+				while (!sCurrentLine.contains("Platoons")) {
+					//roadStations.add(Double.parseDouble(sCurrentLine));
+					sCurrentLine = br.readLine();
+				}
+			}
+			if(nbPl>0) {
+				while ((sCurrentLine = br.readLine()) != null) {
+					String splits[] = sCurrentLine.split(",");
+					variables.nbVlinPl.set(i,splits.length-1); 
+				}
+				
+			}
+			vehicleReader.close();
+		}
+		for(int nb: variables.nbVl) {
+			System.out.println("nb vl "+ nb);
+		}
+	}
+	public static int deltaFiles(Variables variables, int nbFiles) {
+		int score=0;
+	    try {
+			fillArrays(variables, nbFiles);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	    return score;
+	}
+	/**
+	 * 
+	 * @param nbVlMax
+	 * @param nbStas
+	 * @param maxBat
+	 * @param maxDist
+	 * @param minBat
+	 * @param minDist
+	 * @param beta
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
+	public static void indexCreationICTSS(double nbVlMax, double nbPlMax, int nbStas,double maxBat,double maxDist, double minBat, double minDist, BetaDistribution beta) throws FileNotFoundException, UnsupportedEncodingException {
+		double nbVlMin = 4.0;
+		double nbPlMin = 0.0;
+		double nbVlPlMin=2.0;
+		double minSpeed=5;
+		double minFreqStas=80;
+		double x;
+//		nbVlMin=nbVlMax;
+//		nbPlMin=nbPlMax;
+//		minBat=maxBat;
+//		minDist= maxDist;
+		ArrayList<UUID> iD = new ArrayList<UUID>();
+	    ArrayList<UUID> iDPl = new ArrayList<UUID>();
+	    
+		for(int ind =0; ind<10; ind++) {
+			PrintWriter out = new PrintWriter("./ICTSSValsrand"+ind+".txt", "UTF-8");
+			x = Math.random();
+			System.out.println("beta" +x+ "");
+			int nbVl= (int)(nbVlMin + ((int) (beta.inverseCumulativeProbability(x)) * (nbVlMax-nbVlMin)));
+			out.print(nbVl+"\n");
+			x = Math.random();
+			int nbPl =(int)(nbPlMin + ((int) (beta.inverseCumulativeProbability(x)) * (nbPlMax-nbPlMin)));
+			out.print(nbPl+"\n");
+			out.println("Id");
+			for(int i=0; i<nbVl;i++) {
+				UUID idvl = randomUUID();
+				iD.add(idvl);
+				out.println( idvl);
+			}
+			out.println("Battery");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * maxBat) + minBat); // need a level of 40 to accept join at init
+			}
+			out.println("DecAuto");
+			for(int i =0; i<nbVl;i++){
+				x = Math.random();
+				out.println(1 + beta.inverseCumulativeProbability(x) / 5);
+			}
+			out.println("Distance");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * maxDist)+minDist); 
+			}
+			out.println("IdPl");
+			for(int i=0; i<nbPl;i++) {
+				UUID idpl = randomUUID();
+				iDPl.add(idpl);
+				out.println( idpl);
+			}
+			out.println("Position");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * 40)); 
+			}
+			out.println("Speed");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * 10+minSpeed)); 
+			}
+			out.println("StationPositions");
+			int stationPosition=0;
+			for(int i=0; i<nbStas;i++) {
+				x = Math.random();
+				stationPosition+=(int)(beta.inverseCumulativeProbability(x) *40 +minFreqStas);
+				out.println(stationPosition); 
+			}
+			out.print("Platoons");
+			for(int i =0; i<nbPl;i++) {
+				out.print("\n"+iDPl.remove(0));
+				for(int j=0;j<2;j++) {
+					out.print(","+iD.remove(0));
+				}				
+			}
+			iDPl.clear();
+			iD.clear();
+			out.close();
+		}
+	}
+	
+	public static void indexCreation(double nbVlMax,double nbPlMax,double nbVlPlMax, int nbStas,double maxBat,double maxDist, double minBat, double minDist, BetaDistribution beta) throws FileNotFoundException, UnsupportedEncodingException {
+		//the minimal value is fixed for the firsts experiments to guarantee a correct behavior	
+		double nbVlMin = 100.0;
+		double nbPlMin = 4.0;
+		double nbVlPlMin=2.0;
+		double minSpeed=5;
+		double minFreqStas=80;
+		double x;
+		double b;
+
+		for(int ind=20;ind<30;ind++) {
+			PrintWriter out = new PrintWriter("./outputVals"+ind+".txt", "UTF-8");
+			x = Math.random();
+			int nbVl= (int)(nbVlMin + beta.inverseCumulativeProbability(x) * (nbVlMax-nbVlMin));
+			out.print(nbVl+"\n");
+			//writing nb vl and pl wanted
+			x = Math.random();
+			int nbPl =(int)(nbPlMin + beta.inverseCumulativeProbability(x)* (nbPlMax-nbPlMin));
+			out.print(nbPl+"\n");
+			out.println("platoonNb");
+			//writing how many vl for each pl
+			int nbVlPled =0;
+			int accPled=0;
+			boolean bool=true;
+			while(bool) {
+				System.out.println("nb vl "+  nbVl + " nbpl " + nbPl + "nbacc " + accPled);
+				nbVlPled=0;
+				accPled=0;
+				for(int i = 0; i<nbPl; i++) {
+					x = Math.random();
+					nbVlPled=(int)(nbVlPlMin + beta.inverseCumulativeProbability(x)*nbVlPlMax);
+					accPled+=nbVlPled;
+					out.println(nbVlPled);
+				}
+				bool = accPled>=nbVl ? true :false;				
+			}
+			//writing different parameters wanted
+			out.println("Id");
+			for(int i=0; i<nbVl;i++) {
+				out.println( randomUUID());
+			}
+			out.println("Battery");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * maxBat) + minBat); // need a level of 40 to accept join at init
+			}
+			out.println("DecAuto");
+			for(int i =0; i<nbVl;i++){
+				x = Math.random();
+				out.println(1 + beta.inverseCumulativeProbability(x) / 5);
+			}
+			out.println("Distance");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * maxDist)+minDist); //500000) + 10000);
+			}
+			out.println("IdPl");
+			for(int i=0; i<nbPl;i++) {
+				out.println( randomUUID());
+			}
+			out.println("Position");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * 40)); //500000) + 10000);
+			}
+			out.println("Speed");
+			for(int i=0; i<nbVl;i++) {
+				x = Math.random();
+				out.println((int) (beta.inverseCumulativeProbability(x) * 10+minSpeed)); //500000) + 10000);
+			}
+			out.println("StationPositions");
+			int stationPosition=0;
+			for(int i=0; i<nbStas;i++) {
+				x = Math.random();
+				stationPosition+=(int)(beta.inverseCumulativeProbability(x) *40 +minFreqStas);
+				out.println(stationPosition); //500000) + 10000);
+			}
+			out.close();
+		}
+	}
+
+	public static void indexCreationUniform(double nbVlMax,double nbPlMax,double nbVlPlMax, int nbStas,double maxBat,double maxDist, double minBat, double minDist) throws FileNotFoundException, UnsupportedEncodingException {
+		//the minimal value is fixed for the firsts experiments to guarantee a correct behavior
+		
+		double nbVlMin = 20.0;
+		double nbPlMin = 4.0;
+		double nbVlPlMin=2.0;
+		
+		double minSpeed=5;
+		double minFreqStas=80;
+		for(int ind=0;ind<10;ind++) {
+			PrintWriter out = new PrintWriter("./outputVals"+ind+".txt", "UTF-8"); 
+			int nbVl= (int)(nbVlMin + Math.random() * (nbVlMax-nbVlMin));
+			out.print(nbVl+"\n");
+			//writing nb vl and pl wanted
+			int nbPl =(int)(nbPlMin + Math.random()* (nbPlMax-nbPlMin));
+			out.print(nbPl+"\n");
+			out.println("platoonNb");
+			//writing how many vl for each pl
+			int nbVlPled =0;
+			int accPled=0;
+			boolean bool=true;
+			while(bool) {
+				System.out.println("nb vl "+  nbVl + " nbpl " + nbPl + "nbacc " + accPled);
+				nbVlPled=0;
+				accPled=0;
+				for(int i = 0; i<nbPl; i++) {
+					nbVlPled=(int)(nbVlPlMin + Math.random()*nbVlPlMax);
+					accPled+=nbVlPled;
+					out.println(nbVlPled);
+				}
+				bool = accPled>=nbVl ? true :false;				
+			}
+			//writing different parameters wanted
+			out.println("Id");
+			for(int i=0; i<nbVl;i++) {
+				out.println( randomUUID());
+			}
+			out.println("Battery");
+			for(int i=0; i<nbVl;i++) {
+				out.println((int) (Math.random() * maxBat) + minBat); // need a level of 40 to accept join at init
+			}
+			out.println("DecAuto");
+			for(int i =0; i<nbVl;i++){
+				out.println(1 + Math.random() / 5);
+			}
+			out.println("Distance");
+			for(int i=0; i<nbVl;i++) {
+				out.println((int) (Math.random() * maxDist)+minDist); //500000) + 10000);
+			}
+			out.println("IdPl");
+			for(int i=0; i<nbPl;i++) {
+				out.println( randomUUID());
+			}
+			out.println("Position");
+			for(int i=0; i<nbVl;i++) {
+				out.println((int) (Math.random() * 40)); //500000) + 10000);
+			}
+			out.println("Speed");
+			for(int i=0; i<nbVl;i++) {
+				out.println((int) (Math.random() * 10+minSpeed)); //500000) + 10000);
+			}
+			out.println("StationPositions");
+			int stationPosition=0;
+			for(int i=0; i<nbStas;i++) {
+				stationPosition+=(int)(Math.random() *40 +minFreqStas);
+				out.println(stationPosition); //500000) + 10000);
+			}
+			out.close();
+		}
+	}
+	
+	public static void vehiclePlot() throws IOException{
+		//PrintWriter out = new PrintWriter("./stats.csv", "UTF-8"); 
+        FileReader fr = new FileReader("./logv2.txt");
+        BufferedReader br = new BufferedReader(fr);
+        HashMap<String,ArrayList<VehicleAttributes>> allVehiclesData = new HashMap<String, ArrayList<VehicleAttributes>>();
+        HashMap<String,HashSet<String>> platoonVehicleMap = new HashMap<String, HashSet<String>>();
+        
+        String id;
+    	int time=-1;
+    	int line =0;
+    	int nbVehicle=1;
+    	String battery;
+    	String distance;
+    	int numberVehicles=0;
+    	boolean isStas;
+    	boolean isLeader;
+        String sCurrentLine;
+        String[] splits;
+        String stepName="";
+        String iE="";
+        boolean stasHere=false;
+        while ((sCurrentLine = br.readLine()) != null) {
+        	if(sCurrentLine.contains("Vehicle;")) {
+        		splits =sCurrentLine.split(";");
+        		id=splits[1];
+        		distance=splits[2];
+        		battery=splits[3];
+        		isLeader = (splits[4].equals("Leader")) ? true : false;
+        		isStas = stasHere;
+        		iE = (splits.length == 6) ? splits[5] : "nothing";
+        		if(!splits[4].contains("Solo")) {
+        			numberVehicles=2;
+        			for(Map.Entry<String, HashSet<String>> vList : platoonVehicleMap.entrySet()) {
+        				if (vList.getValue().contains(id)) {
+        					numberVehicles=vList.getValue().size();
+        					break;
+        				}
+        			}
+        		}
+        		else numberVehicles=1;
+        		VehicleAttributes va = new VehicleAttributes(id, time, battery, distance, numberVehicles, isStas, isLeader,stepName,iE);
+        		ArrayList<VehicleAttributes> vAtts= allVehiclesData.get(id);
+        		if(vAtts ==null) {
+        			ArrayList<VehicleAttributes> vehicleData = new ArrayList<VehicleAttributes>();
+        			vehicleData.add(va);
+        			allVehiclesData.put(id, vehicleData);
+        		}
+        		else {
+        			vAtts.add(va);
+        			allVehiclesData.put(id, vAtts);
+        		}
+        	}
+        	if(sCurrentLine.contains("Station")) {
+        		splits =sCurrentLine.split(";");
+        		double dist = Double.parseDouble(splits[1]);
+        		stasHere = (dist<=10.0) ? true : false;
+        		platoonVehicleMap.clear();
+        		time++;
+        		stepName=splits[2];
+        	}
+        	if(sCurrentLine.contains("Platoon")) {
+        		splits =sCurrentLine.split(";");
+        		HashSet<String> vehicleList = new HashSet<String>();
+        		for(int i = 3; i<splits.length;i++) {
+        			vehicleList.add(splits[i]);
+        		}
+        		platoonVehicleMap.put(splits[1], vehicleList);
+        		vehicleList.clear();
+        	}
+        }
+//        out.println("\\documentclass{article}\n" + 
+//        		"\\usepackage[utf8]{inputenc}\n" + 
+//        		"\\usepackage{pgfplots}\n" + 
+//        		"\\pgfplotsset{compat=1.5}\n" + 
+//        		"\\begin{document}\n");
+        for(Map.Entry<String, ArrayList<VehicleAttributes>> vList : allVehiclesData.entrySet()) {
+//            out.println("\\begin{tikzpicture} \n"+
+//            		"\\begin{axis}[]\n"
+//            		);
+            
+//        	out.println("\\addplot coordinates {\n");
+//        	for(VehicleAttributes attList: vList.getValue()) {
+//        		out.println("("+attList.time+","+attList.battery+")");
+//            	//out.println(attList.id+";"+ attList.battery+";"+attList.numberVehicles+";"+ attList.distance);
+//        	}
+//        	out.println("}\n");
+//        	out.println("\\addplot coordinates {\n");
+    		PrintWriter outVl = new PrintWriter("./stats"+nbVehicle+".csv", "UTF-8"); 
+    		int lasttime =0;
+        	for(VehicleAttributes attList: vList.getValue()) {
+        		while(attList.time>lasttime) {
+            		outVl.println(lasttime+";"+0+";"+0+";"+0+ ";"+ 0 + ";" +"tick" + ";" + 0+";" + "null");
+            		lasttime++;
+        		}
+        		outVl.println(attList.time+";"+attList.battery+";"+attList.distance+";"+attList.numberVehicles+ ";"+ attList.isLeader + ";" +attList.stepName + ";" + attList.isStas+";" + attList.internEvent);
+        		lasttime++;
+            	//out.println(attList.id+";"+ attList.battery+";"+attList.numberVehicles+";"+ attList.distance);
+        	}
+    		while(lasttime<300) {
+        		outVl.println(lasttime+";"+0+";"+0+";"+0+ ";"+ 0 + ";" +"tick" + ";" + 0);
+        		lasttime++;
+    		}
+        	outVl.close();
+        	nbVehicle++;
+//        	out.println("}\n");
+//        	out.println("\\addplot coordinates {\n");
+//        	for(VehicleAttributes attList: vList.getValue()) {
+//        		out.println("("+attList.time+","++")");
+//            	//out.println(attList.id+";"+ attList.battery+";"+attList.numberVehicles+";"+ attList.distance);
+//        	}
+//        	out.println("};\n");
+//            out.println("\\end{axis}\n" +
+//            		"\\end{tikzpicture}\n");
+        }
+//        out.println("\\end{document}\n");
+        
+        fr.close();
+	}
+	
+	public static void nextStationPlot() throws IOException {
+		PrintWriter out = new PrintWriter("./station.txt", "UTF-8"); 
+        FileReader fr = new FileReader("./log2018-10-05 14-49-01.txt");
+        BufferedReader br = new BufferedReader(fr);
+        int time =0;
+		String sCurrentLine;
+		boolean firstLine = true;
+		out.println("x_0	f(x_1)");
+		sCurrentLine = br.readLine();
+		String[] splits;
+		while ((sCurrentLine = br.readLine()) != null) {
+			if(sCurrentLine.contains("Station")) {
+				time++;
+				if(time%1==0) {
+					splits = sCurrentLine.split(";");
+					out.println("(" + time + "," + splits[1] + ")");
+				}
+			}
+		}
+		out.close();
+		fr.close();
+	}
+	
+	public static void	statusVehicle() throws IOException{
+		PrintWriter out = new PrintWriter("./status.txt", "UTF-8"); 
+        FileReader fr = new FileReader("./log2018-10-05 13-32-50.txt");
+        BufferedReader br = new BufferedReader(fr);
+        int time =0;
+        String vehicleString="";
+		String sCurrentLine;
+		boolean firstLine = true;
+		sCurrentLine = br.readLine();
+		String[] splits;
+		splits = sCurrentLine.split(";");
+		vehicleString= splits[2];
+		out.println("(" + time + "," + splits[0] + ")");
+		while ((sCurrentLine = br.readLine()) != null) {
+			if(sCurrentLine.contains(vehicleString)) {
+				time++;
+				if(time%2==0) {
+					splits = sCurrentLine.split(";");
+					switch (splits[3]) {
+					case "Solo":
+						out.println("(" + time/2 + "," + "1" + ")");
+						break;
+					case "Platooned":
+						out.println("(" + time/2 + "," + "2" + ")");
+					break;
+					case "Leader":
+						out.println("(" + time/2 + "," + "3" + ")");
+					break;
+					default:
+						break;
+					}
+				}
+			}
+		}
+		out.close();
+		fr.close();
+	}
+	public static void NumberVehiclesPlot() throws IOException {
+		PrintWriter out = new PrintWriter("./platoon.txt", "UTF-8"); 
+        FileReader fr = new FileReader("./log2018-10-05 13-32-50.txt");
+        BufferedReader br = new BufferedReader(fr);
+        int time =0;
+        String platoonString="";
+		String sCurrentLine;
+		String[] splits;
+//		do {
+//			
+//		sCurrentLine = br.readLine();
+//		splits = sCurrentLine.split(";");
+//		System.out.println(splits[0]);
+//		if(splits[0].equals("Platoon")) {
+//			platoonString= splits[2];
+//		}
+//		}while(sCurrentLine != null && platoonString =="");
+//		
+		while ((sCurrentLine = br.readLine()) != null) {
+			splits = sCurrentLine.split(";");
+			if(splits[0].equals("Platoon")) {
+				out.println("(" + time + "," + splits[1] + ")");
+				time++;
+			}
+		}
+		out.close();
+		fr.close();
+	}
+	public static void autonomyPlot() throws IOException {
+		PrintWriter out = new PrintWriter("./autonomy.txt", "UTF-8"); 
+        FileReader fr = new FileReader("./log2018-10-04 16-23-33.txt");
+        BufferedReader br = new BufferedReader(fr);
+        int time =0;
+        String vehicleString="";
+		String sCurrentLine;
+		boolean firstLine = true;
+		out.println("x_0	f(x_1)");
+		sCurrentLine = br.readLine();
+		String[] splits;
+		splits = sCurrentLine.split(";");
+		vehicleString= splits[2];
+		out.println("(" + time + "," + splits[0] + ")");
+		while ((sCurrentLine = br.readLine()) != null) {
+			if(sCurrentLine.contains(vehicleString)) {
+				time++;
+				if(time%5==0) {
+					splits = sCurrentLine.split(";");
+					out.println("(" + time + "," + splits[0] + ")");
+				}
+			}
+		}
+		out.close();
+		fr.close();
+	}
+	
+	public static void distancePlot() throws IOException {
+		PrintWriter out = new PrintWriter("./distance.txt", "UTF-8"); 
+        FileReader fr = new FileReader("./log2018-10-04 16-23-33.txt");
+        BufferedReader br = new BufferedReader(fr);
+        int time =0;
+        String vehicleString="";
+		String sCurrentLine;
+		boolean firstLine = true;
+		out.println("x_0	f(x_1)");
+		sCurrentLine = br.readLine();
+		String[] splits;
+		splits = sCurrentLine.split(";");
+		vehicleString= splits[2];
+		out.println("(" + time + "," + splits[1] + ")");
+		while ((sCurrentLine = br.readLine()) != null) {
+			if(sCurrentLine.contains(vehicleString)) {
+				time++;
+				if(time%5==0) {
+					splits = sCurrentLine.split(";");
+					if(splits.length >1) out.println("(" + time + "," + splits[1] + ")");
+				}
+			}
+		}
+		out.close();
+		fr.close();
+	}
+
+}
