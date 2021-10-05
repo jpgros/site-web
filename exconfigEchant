@@ -1,16 +1,16 @@
-<mxfile host="app.diagrams.net" modified="2021-10-05T11:56:05.253Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="xT4s3iOBjs0douaZUkDX" version="15.1.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-05T11:59:17.739Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="Ula9Be_eYoSqDrprayI6" version="15.1.4" type="github">
   <diagram id="hOlpSFskkREgjegEGL3h" name="Page-1">
-    <mxGraphModel dx="813" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-1" value="p : platoon" style="html=1;align=left;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-1" value="p2 : platoon" style="html=1;align=left;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="130.44" y="142.5" width="429.56" height="80" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-2" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="205.44" y="167.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-3" value="v3 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-3" value="v2.1 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="193.82" y="157.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-4" value="" style="html=1;" vertex="1" parent="1">
@@ -19,7 +19,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-5" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="338.82" y="167.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-6" value="v2 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-6" value="v2.2 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="326.07" y="157.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-7" value="" style="html=1;" vertex="1" parent="1">
@@ -204,13 +204,13 @@
             <mxPoint x="130" y="262.50000000000006" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-57" value="p : platoon" style="html=1;align=left;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-57" value="p1 : platoon" style="html=1;align=left;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="130.44" y="65" width="292.56" height="65" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-58" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="205.44" y="82.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-59" value="v3 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-59" value="v1.1 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="193.82" y="72.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-60" value="" style="html=1;" vertex="1" parent="1">
@@ -219,7 +219,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-61" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="338.82" y="82.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-62" value="v2 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-62" value="v1.2 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="326.07" y="72.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-63" value="" style="html=1;" vertex="1" parent="1">
@@ -271,7 +271,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-75" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="471.06999999999994" y="167.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-76" value="v2 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-76" value="v2.3 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="458.31999999999994" y="157.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-77" value="" style="html=1;" vertex="1" parent="1">
@@ -317,7 +317,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-87" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="753.9899999999999" y="182.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-88" value="v3 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-88" value="v2 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="742.3699999999999" y="172.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-89" value="" style="html=1;" vertex="1" parent="1">
@@ -374,7 +374,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-113" value="r:road" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="613" y="165" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-114" value="v1 :&amp;nbsp; vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-114" value="v3 :&amp;nbsp; vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="742.3699999999999" y="232.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-115" value="" style="html=1;" vertex="1" parent="1">
@@ -383,7 +383,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-117" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="742.3699999999999" y="362.5" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-118" value="&lt;div align=&quot;right&quot;&gt;&amp;nbsp; v2 : vehicle&lt;br&gt;&lt;/div&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-118" value="&lt;div align=&quot;right&quot;&gt;v4 : vehicle&lt;br&gt;&lt;/div&gt;" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="742.3699999999999" y="292.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-119" value="" style="html=1;" vertex="1" parent="1">
@@ -403,7 +403,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-123" value="" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;strokeColor=#000000;fillColor=#ffffff;points=[];aspect=fixed;resizable=0;" vertex="1" parent="1">
           <mxGeometry x="712.3699999999999" y="317.5" width="10" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-124" value="v3 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-124" value="v5 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="742.3699999999999" y="352.5" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-125" value="" style="html=1;" vertex="1" parent="1">
@@ -444,7 +444,7 @@
         <mxCell id="OorYTCwNBbu9GwX8oNf8-135" value="connV" style="html=1;" vertex="1" parent="1">
           <mxGeometry x="753.9899999999999" y="120" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OorYTCwNBbu9GwX8oNf8-136" value="v3 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+        <mxCell id="OorYTCwNBbu9GwX8oNf8-136" value="v1 : vehicle" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="742.3699999999999" y="110" width="95" height="50" as="geometry" />
         </mxCell>
         <mxCell id="OorYTCwNBbu9GwX8oNf8-137" value="" style="html=1;" vertex="1" parent="1">
