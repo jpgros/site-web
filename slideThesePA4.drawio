@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-12T12:42:50.763Z" agent="5.0 (X11)" etag="h7kA5DNIw-Tvf2CVpcAu" version="15.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-12T12:43:52.869Z" agent="5.0 (X11)" etag="nEcQ3xvMmRbqXQAxor95" version="15.5.5" type="github">
   <diagram id="h5-6c95KHCAkGdze8uv-" name="Page-1">
     <mxGraphModel dx="1355" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -166,18 +166,6 @@
             <mxPoint x="415" y="205" as="sourcePoint" />
             <mxPoint x="395" y="205" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="d_kUtybQaHPVFvwEdMjx-61" value="4" style="ellipse;fillColor=#ffffff;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="732" y="420" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d_kUtybQaHPVFvwEdMjx-62" value="3" style="ellipse;fillColor=#ffffff;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="600" y="420" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d_kUtybQaHPVFvwEdMjx-63" value="2" style="ellipse;fillColor=#ffffff;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="480" y="420" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="d_kUtybQaHPVFvwEdMjx-64" value="1" style="ellipse;fillColor=#ffffff;strokeColor=#000000;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="355" y="420" width="30" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
